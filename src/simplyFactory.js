@@ -1,6 +1,6 @@
 /**
  * Created by lenovo on 2018/1/3.
- * 工厂模式
+ * 简单工厂模式
  */
 function all2num(value) {
   let type = typeof value;
@@ -64,41 +64,21 @@ class Div extends Oparation{
 }
 
 class Factory {
-  constructor(a, b) {
-    this.a = a;
-    this.b = b;
-  }
-}
-
-class PlusFactory extends Factory {
-  constructor(a, b) {
-    super(a, b);
-    return new Plus(a, b);
-  }
-}
-
-class ReduceFactory extends Factory {
-  constructor(a, b) {
-    super(a, b);
-    return new Reduce(a, b);
-  }
-}
-
-class MultiFactory extends Factory {
-  constructor(a, b) {
-    super(a, b);
-    return new Multi(a, b);
-  }
-}
-
-class DivFactory extends Factory {
-  constructor(a, b) {
-    super(a, b);
-    return new Div(a, b);
+  constructor(a, b, symbol) {
+    switch (symbol) {
+      case '-':
+        return new Reduce(a, b);
+      case '*':
+        return new Multi(a, b);
+      case '/':
+        return new Div(a, b);
+      default:
+        return new Plus(a, b);
+    }
   }
 }
 
 
-let reduceFactory = new ReduceFactory(9, 6);
+let add = new Factory(function() {}, 6, '-');
 
-console.log(reduceFactory.getResult())
+console.log(add.getResult())
