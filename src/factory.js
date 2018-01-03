@@ -68,37 +68,48 @@ class Factory {
     this.a = a;
     this.b = b;
   }
+  opration() {
+    return null;
+  }
 }
 
 class PlusFactory extends Factory {
   constructor(a, b) {
     super(a, b);
-    return new Plus(a, b);
+  }
+  opration() {
+    return new Plus(this.a, this.b);
   }
 }
 
 class ReduceFactory extends Factory {
   constructor(a, b) {
     super(a, b);
-    return new Reduce(a, b);
+  }
+  opration() {
+    return new Reduce(this.a, this.b);
   }
 }
 
 class MultiFactory extends Factory {
   constructor(a, b) {
     super(a, b);
-    return new Multi(a, b);
+  }
+  opration() {
+    return new Multi(this.a, this.b);
   }
 }
 
 class DivFactory extends Factory {
   constructor(a, b) {
     super(a, b);
-    return new Div(a, b);
+  }
+  opration() {
+    return new Div(this.a, this.b);
   }
 }
 
 
-let reduceFactory = new ReduceFactory(9, 6);
+let reduceFactory = new ReduceFactory(9, 6).opration();
 
 console.log(reduceFactory.getResult())
