@@ -31,23 +31,37 @@ class Proxyer extends GiveGift {
     this.gg = new Pursuit(mm);
   }
   giveDolls() {
-    this.gg.giveDolls();
+    if (this.mm.age >= 18) {
+      this.gg.giveDolls();
+    } else {
+      console.log(this.mm.name, '还是未成年，不接受娃娃');
+    }
+
   }
   giveFlower() {
-    this.gg.giveFlower();
+    if (this.mm.age >= 18) {
+      this.gg.giveFlower();
+    } else {
+      console.log(this.mm.name, '还是未成年，不接受花花');
+    }
   }
   giveChocolate() {
-    this.gg.giveChocolate();
+    if (this.mm.age >= 18) {
+      this.gg.giveChocolate();
+    } else {
+      console.log(this.mm.name, '还是未成年，不接受巧克力');
+    }
   }
 }
 
 class Girl {
-  constructor(name) {
+  constructor(name, age) {
     this.name = name;
+    this.age = age;
   }
 }
 
-const mm = new Girl('霞霞');
+const mm = new Girl('霞霞', 18);
 
 const proxy = new Proxyer(mm);
 
