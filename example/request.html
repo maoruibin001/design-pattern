@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<h1>hello world</h1>
+<div ng-app="myapp" ng-controller="myctr">
+    {{hello}}
+</div>
+<script src="https://cdn.bootcss.com/jquery/3.1.1/jquery.js"></script>
+<script src="https://cdn.bootcss.com/angular.js/1.6.7/angular.js"></script>
+
+<script>
+    var data = {username:'mao', password: 30, else: 'xxx'}
+    console.log($.param(data));
+    angular.module('myapp', []).controller('myctr', function($scope, $http) {
+      $scope.hello = 'hello world';
+      $http({
+        url: '/hello',
+        method: 'post',
+        data: data,
+      }).then(function(data) {
+        console.log(data);
+      });
+    })
+</script>
+</body>
+</html>

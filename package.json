@@ -1,0 +1,25 @@
+{
+  "name": "design-pattern",
+  "version": "1.0.0",
+  "description": "* +src 源代码目录",
+  "main": "index.js",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/maoruibin001/design-pattern.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/maoruibin001/design-pattern/issues"
+  },
+  "homepage": "https://github.com/maoruibin001/design-pattern#readme",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}
